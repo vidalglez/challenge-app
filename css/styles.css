@@ -27,6 +27,9 @@ header {
   padding-top: 20px;
   /*padding-bottom: 20px;*/
   color: #617140;
+  background-image: url(../img/flower.jpg);
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 
 header h1 {
@@ -43,9 +46,16 @@ header p {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  background: url(../img/color-tile.png) left bottom repeat-x,
+   #FFF url(../img/color-tile.png) left top repeat-x;
+  /*
   background-color: #fff;
+  background-image: url(../img/color-tile.png);
+  background-repeat: repeat-x;
+  */
+  padding-top:15px;
   padding-left: 40px;
-  padding-right: 40px;
+  /*padding-right: 40px;*/
   box-sizing: border-box;
   text-align: justify;
 }
@@ -66,9 +76,15 @@ header p {
   width: 34%;
   float: left;
   background-color: #e5e9dc;
+  /*Gradient Background*/
+  background-image: linear-gradient(to bottom, #e5e9dc, #FFF);
+  
+  /*
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 20px;
+  */
+  padding: 20px 40px;
   padding-bottom: 20px;
   box-sizing: border-box;
   font-size: 85%;
@@ -95,7 +111,7 @@ footer {
 .group {
   zoom: 1;
 }
-
+/* Site Navigation */
 .site-nav {
   margin-top: 20px;
 }
@@ -124,17 +140,72 @@ footer {
   background-color: #e5e9dc;
 }
 
+/* End Site Navigation */
+
+/* UI Menu*/
+
+.ui-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.ui-menu li {
+  float: left;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.ui-menu a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/sprites.png);
+  text-indent:  -9999px;
+  background-repeat: no-repeat;
+}
+
+.ui-home a:hover {
+  background-position: -50px 0;
+}
+
+.ui-profile a{
+  background-position: 0 -50px;
+}
+
+.ui-profile a:hover {
+  background-position: -50px -50px;
+}
+
+.ui-settings a{
+  background-position: 0 -100px;
+}
+
+.ui-settings a:hover {
+  background-position: -50px -100px;
+}
+
+/* End UI Menu*/
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Banner Overlay */
 .image-banner {
   position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .image-banner img {
   display: block;
+  transition: all 1s;
+  
+}
+
+.image-banner:hover img {
+  transform: scale(1.1);
 }
 
 .banner-description {
@@ -144,7 +215,31 @@ img {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.25);
   padding: 15px 10px;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 1s;
+  transform: translateY(100%); 
 }
+
+.image-banner:hover .banner-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.birds {  
+  padding: 100px 0;
+  text-align: center;
+  /*
+  background-color: #c2bbb1;
+  background-image: url(../img/bird.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  */
+  background: #c2bbb1 url(../img/bird.jpg) center center no-repeat;
+  background-size: cover; 
+}
+
+/* End Banner Overlay */
 
 table {
   border-spacing: 0;
